@@ -1,81 +1,68 @@
-# Turborepo starter
+# Fabble
 
-This is an official starter Turborepo.
+Fabble is a highly scalable chat application developed using Next.js 14 for the frontend and Node.js for the backend. It incorporates various technologies such as Redis, PostgreSQL, Prisma (ORM), TypeScript, WebSockets, and Kafka to provide a seamless and responsive chat experience.
 
-## Using this example
+## Features
 
-Run the following command:
+- **Real-time Communication**: Implemented using WebSockets (socket.io) to ensure a responsive chat experience.
+- **Efficient Message Broadcasting**: Utilizes Redis Pub/Sub for seamless communication across servers, enhancing scalability and efficiency.
+- **High-throughput Message Handling**: Integrated Kafka for handling high-throughput scenarios, ensuring reliable message processing and storage in PostgreSQL.
+- **Optimistic Updates**: Provides a smoother user experience by reflecting user actions in the UI before server confirmation.
+- **Infinite Queries**: Utilizes infinite queries to efficiently fetch and display messages, providing an uninterrupted chat experience.
 
-```sh
-npx create-turbo@latest
+## Technologies Used
+
+- **Frontend**: Next.js 14
+- **Backend**: Node.js
+- **Database**: PostgreSQL with Prisma (ORM)
+- **Real-time Communication**: WebSockets (socket.io)
+- **Message Queue**: Kafka
+- **Data Caching**: Redis
+- **Language**: TypeScript
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/vednp/fabble.git
 ```
 
-## What's inside?
+2. Install dependencies:
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+cd fabble
+npm install
 ```
 
-### Develop
+3. Set up environment variables. You may need to create a `.env` file in the root directory and define the following variables:
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```plaintext
+PORT=3000
+REDIS_HOST=your_redis_host
+REDIS_PORT=your_redis_port
+POSTGRES_HOST=your_postgres_host
+POSTGRES_USER=your_postgres_user
+POSTGRES_PASSWORD=your_postgres_password
+POSTGRES_DB=your_postgres_db
+KAFKA_HOST=your_kafka_host
+KAFKA_PORT=your_kafka_port
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+4. Start the development server:
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+```bash
+npm run dev
 ```
 
-## Useful Links
+## Usage
 
-Learn more about the power of Turborepo:
+After installing and starting the application, you can access the chat application through your browser. Users can register, log in, and start chatting with others in real-time.
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+## Contributing
+
+Contributions are welcome! Please feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
