@@ -2,6 +2,9 @@
 
 Fabble is a highly scalable chat application developed using Next.js 14 for the frontend and Node.js for the backend. It incorporates various technologies such as Redis, PostgreSQL, Prisma (ORM), TypeScript, WebSockets, and Kafka to provide a seamless and responsive chat experience.
 
+## Architecture
+<img width="860" alt="Screenshot 2024-02-08 at 10 21 48 AM" src="https://github.com/vednp/fabble/assets/114849889/1953019f-e9e3-4e32-8d0f-7ab4771ddbfa">
+
 ## Features
 
 - **Real-time Communication**: Implemented using WebSockets (socket.io) to ensure a responsive chat experience.
